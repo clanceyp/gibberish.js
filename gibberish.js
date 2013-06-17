@@ -1,7 +1,5 @@
-
 (function(context, element){
 "use strict";
-    element = element || document.getElementsByTagName('body')[0] || null;
     context.unreadable = {
         blitz:function(el){
             var value = [],
@@ -75,4 +73,4 @@
 
 
     
-})(window, null);    
+})( window );    
