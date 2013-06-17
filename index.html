@@ -53,11 +53,14 @@
       border-radius: 28px;
       box-shadow: 0px 1px 3px #666;
       color: #fff;
-      padding:3px 12px 4px 12px;
+      font-size:1.3em;
+      padding:3px 20px 4px 20px;
       text-decoration: none;
       text-shadow: 1px 1px 3px #666;
     }
-    
+    *.tac {
+      text-align:center;
+    }
   </style>
   </head>
 
@@ -93,7 +96,7 @@
         </h1>
 
         <p>Make text on a webpage unreadable gibberish.</p>
-        <p><button class="gibberize">Make this page gibberish</button></p>
+        <p class="tac"><button class="gibberize">Make this page gibberish</button></p>
 
       </section>
 
@@ -114,7 +117,7 @@
 
       <script>
         $(document).ready(function(){
-          $('input.gibberize').on('click',function(){
+          $('button.gibberize').on('click',function(){
             unreadable.gibberish( document.getElementsByTagName('body')[0] );
           });
         });
