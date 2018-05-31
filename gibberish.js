@@ -1,6 +1,7 @@
 (function(context, element){
 "use strict";
     context.gibberish = {
+        ignore: ["script","style"],
         blitz:function(el){
             var value = [],
                 currentVal = el.nodeValue,
@@ -57,12 +58,15 @@
             return n;
         },
         go:function(el){
+            if (gibberish.ignore.indexOf(el.nodeName) >= 0){
+                return;
+            }
             if (el.childNodes.length > 0) {
                 for (var i = 0, l = el.childNodes.length; i<l ; i++) {
                     gibberish.go(el.childNodes[i]);
                 }
             }
-            if (el.nodeType == Node.TEXT_NODE && !!el.nodeValue) {
+            if (el.nodeType === Node.TEXT_NODE && !!el.nodeValue) {
                 gibberish.blitz(el);
             }
         }
